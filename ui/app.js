@@ -746,7 +746,7 @@ $(document).ready(() => {
       $.post(
         `https://${GetParentResourceName()}/SetHouseLocation`,
         JSON.stringify({
-          coord: coord,
+          coord: {x : parseFloat(coord[0]),y:parseFloat(coord[1])},
         })
       );
     }, 250);

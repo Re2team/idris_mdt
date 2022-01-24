@@ -369,8 +369,9 @@ end)
 
 
 RegisterNUICallback('SetHouseLocation', function(data, cb)
-    SetNewWaypoint(data.coord[1], data.coord[2])
+    SetNewWaypoint(data.coord['x'], data.coord['y'])
     QBCore.Functions.Notify('GPS has been set!', 'success')
+    cb(true)
 end)
 
 --====================================================================================
